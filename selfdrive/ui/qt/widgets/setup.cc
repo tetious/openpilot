@@ -161,10 +161,15 @@ SetupWidget::SetupWidget(QWidget* parent) : QFrame(parent) {
   QPushButton* finishButton = new QPushButton("Finish setup");
   finishButton->setFixedHeight(200);
   finishButton->setStyleSheet(R"(
-    border-radius: 30px;
-    font-size: 55px;
-    font-weight: 500;
-    background: #585858;
+    QPushButton {
+      border-radius: 30px;
+      font-size: 55px;
+      font-weight: 500;
+      background: #585858;
+    }
+    QPushButton:pressed {
+      background: #6b6b6b;
+    }
   )");
   finishRegistationLayout->addWidget(finishButton);
   QObject::connect(finishButton, &QPushButton::clicked, this, &SetupWidget::showQrCode);
